@@ -45,12 +45,18 @@ export class Product {
         this.slug = this.title
     }
    
-    this.slug = this.title
+    this.slug = this.slug
     .toLowerCase()
     .replaceAll(' ','_')
     .replaceAll("'",'')
     
     }
 
-    // @BeforeUpdate()
+    @BeforeUpdate()
+    checkSlugUpdate(){
+        this.slug = this.slug
+            .toLowerCase()
+            .replaceAll(' ','_')
+            .replaceAll("'",'')
+    }
 }
