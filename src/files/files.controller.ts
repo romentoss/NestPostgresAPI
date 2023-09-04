@@ -34,7 +34,6 @@ export class FilesController {
     })
   }))
 
-
   uploadProductImage(
     @UploadedFile() file:Express.Multer.File
     ){
@@ -43,9 +42,7 @@ export class FilesController {
       }
 
       const secureUrl = `${this.configService.get('HOST_API')}/files/product/${file.filename}`
-      console.log(file);
       
-
     return {
      secureUrl
     };
